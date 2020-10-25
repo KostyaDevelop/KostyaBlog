@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^KostyaBlog/public
+RewriteRule ^(.*)$ KostyaBlog/public/$1 [L]
