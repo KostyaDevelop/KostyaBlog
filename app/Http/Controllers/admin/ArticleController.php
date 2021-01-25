@@ -25,7 +25,7 @@ class ArticleController extends Controller
                 'delimiter' => ''
                 ]);
     }
-
+/////////////////////////////////////////////////
     public function store(Request $request)
     {
         $localIP = getHostByName(php_uname('n'));
