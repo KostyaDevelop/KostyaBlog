@@ -23,7 +23,7 @@
                                     <td class="break_word">
                                         <div class="row">
                                             <div class="col-lg-6">
-                                                <img class="post-photo-main_page"  src="{{$article->photo_adress}}">
+                                                <img width="300px" height="400px" class="post-photo-main_page"  src="{{$article->photo_adress}}">
                                             </div>
                                             <div class="col-lg-6">
                                                 <p class="text-post">

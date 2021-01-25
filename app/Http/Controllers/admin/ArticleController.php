@@ -28,6 +28,10 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
+        $localIP = getHostByName(php_uname('n'));
+        $request->validate([
+            'picture' => 'required|image|mimes:jpeg,jpg,png|max:4048',
+        ]);
         //Выбираем изображение из реквеста
         $image = $request->file('picture');
 
@@ -38,7 +42,7 @@ class ArticleController extends Controller
         $request->file('picture')->storeAs('public/uploads', $originalname);
 
         //Берем путь до нашего изображения
-        $path_photo_full =  asset('/storage/uploads') . '/' .  $originalname;
+        $path_photo_full = 'http://' . $localIP . '/' .  'storage/uploads' . '/' .  $originalname;
 
         //Помещаем наше изображение в массив
         $request_array = ($request->all());
